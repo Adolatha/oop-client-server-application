@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="be.howest.ti.ooansd.exam.ui.fx.SchdeduleController">
    <children>
       <Label layoutX="14.0" layoutY="14.0" text="Workplanner 🛠️">
          <font>
@@ -16,21 +12,21 @@
          </font>
       </Label>
       <Label layoutX="15.0" layoutY="75.0" text="Employee:" />
-      <ComboBox layoutX="132.0" layoutY="75.0" prefHeight="26.0" prefWidth="346.0" promptText="&lt;&lt;Select employee&gt;&gt;" />
+      <ComboBox fx:id="EmployeeName" layoutX="132.0" layoutY="75.0" onAction="#onEmployeeSelection" prefHeight="26.0" prefWidth="346.0" promptText="&lt;&lt;Select employee&gt;&gt;" />
       <Label layoutX="15.0" layoutY="115.0" text="Date:" />
-      <DatePicker layoutX="132.0" layoutY="116.0" prefHeight="26.0" prefWidth="150.0" promptText="&lt;&lt;Select date&gt;&gt;" />
+      <DatePicker fx:id="Calendar" layoutX="132.0" layoutY="116.0" onAction="#onDateSelection" prefHeight="26.0" prefWidth="150.0" promptText="&lt;&lt;Select date&gt;&gt;" />
       <Label layoutX="14.0" layoutY="156.0" text="Current shifts:" />
-      <ListView layoutX="132.0" layoutY="156.0" prefHeight="170.0" prefWidth="346.0" />
+      <ListView fx:id="ListOfShifts" layoutX="132.0" layoutY="156.0" prefHeight="170.0" prefWidth="346.0" />
       <Label layoutX="12.0" layoutY="345.0" text="Add a shift">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Label layoutX="14.0" layoutY="380.0" text="Start time:" />
-      <ComboBox layoutX="132.0" layoutY="376.0" prefHeight="26.0" prefWidth="185.0" promptText="&lt;&lt;Select start time&gt;&gt;" />
+      <ComboBox fx:id="startTime" layoutX="132.0" layoutY="376.0" prefHeight="26.0" prefWidth="185.0" promptText="&lt;&lt;Select start time&gt;&gt;" />
       <Label layoutX="14.0" layoutY="419.0" text="End time:" />
-      <ComboBox layoutX="132.0" layoutY="415.0" prefHeight="26.0" prefWidth="185.0" promptText="&lt;&lt;Select end time&gt;&gt;" />
-      <Button layoutX="15.0" layoutY="459.0" mnemonicParsing="false" text="Add shift" />
-      <Label layoutX="132.0" layoutY="464.0" text="lblError" textFill="RED" />
+      <ComboBox fx:id="endTime" layoutX="132.0" layoutY="415.0" prefHeight="26.0" prefWidth="185.0" promptText="&lt;&lt;Select end time&gt;&gt;" />
+      <Button layoutX="15.0" layoutY="459.0" mnemonicParsing="false" onAction="#onAddShift" text="Add shift" />
+      <Label fx:id="lblError" layoutX="132.0" layoutY="464.0" text="lblError" textFill="RED" />
    </children>
 </Pane>

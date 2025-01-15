@@ -23,6 +23,8 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation("mysql:mysql-connector-java:8.0.33")
+    implementation ("org.springframework.security:spring-security-crypto:6.4.1")
 }
 
 tasks.test {

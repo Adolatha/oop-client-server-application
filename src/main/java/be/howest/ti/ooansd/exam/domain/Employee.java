@@ -3,17 +3,17 @@ package be.howest.ti.ooansd.exam.domain;
 import java.util.UUID;
 
 public class Employee {
-    private UUID id;
+    private int id;
     private String name;
     private int workingHours;
 
-    public Employee(String name, int workingHours) {
-        this.id = UUID.randomUUID();
+    public Employee(int id, String name, int workingHours) {
+        this.id = id;
         this.name = name;
         this.workingHours = workingHours;
     }
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
@@ -21,8 +21,5 @@ public class Employee {
         return name;
     }
 
-    public int getWorkingHours() {
-        return workingHours;
-    }
 
 }
